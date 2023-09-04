@@ -1,0 +1,374 @@
+:root {
+    --text-color: rgb(96, 95, 95);
+    --input-area: #ffffffff;
+    --background-color: linear-gradient(to right top, #c8d489, #c6d69c, #c7d7ad, #cad8bd, #d0d8cc);
+    --card-bg: linear-gradient(to right bottom, #a85a67, #9c5262, #8f4a5c, #834257, #773a51, #71364e, #6a324b, #642e48, #622c47, #602b45, #5e2944, #5c2843);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+input,
+button,
+select {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+input,
+select {
+    border: 1px solid rgb(179, 178, 178);
+    padding: 1rem 0;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #a85a67;
+    font-weight: 600;
+}
+
+.input-alt {
+    padding-inline: 1rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: .5px;
+    font-size: 14px;
+}
+
+
+input:focus,
+select:focus {
+    border: 1px solid #71364e;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    background-image: var(--background-color);
+}
+
+small {
+    font-style: italic;
+}
+
+.container {
+    margin-inline: 1rem;
+    max-width: 520px;
+}
+
+.flex {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+
+.main {
+    min-height: 100vh;
+    padding: 10rem 0 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.card-area {
+    position: relative;
+    background-color: var(--input-area);
+    padding: 9rem 1rem 2rem;
+    border-radius: 20px;
+}
+
+.card-number {
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.label {
+    gap: .7rem;
+    color: #9c5262;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.form {
+    gap: 1.5rem;
+}
+
+.bottom {
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.drop-downs {
+    width: 65%;
+}
+
+.selects {
+    width: 100%;
+    gap: 5%;
+    align-items: center;
+}
+
+.select {
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+.select-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: max-content;
+}
+
+.select-container::after {
+    content: '\25BC';
+    position: absolute;
+    right: .6rem;
+    transform: scale(1.1);
+    top: 1rem;
+    pointer-events: none;
+}
+
+option {
+    background: #000;
+}
+
+
+.cvv {
+    width: 35%;
+}
+
+.position {
+    position: relative;
+}
+
+.error-bottom {
+    position: absolute;
+    bottom: -1.4rem;
+}
+
+.select::placeholder {
+    font-size: 12px;
+}
+
+.btn {
+    padding: 1rem;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #9c5262;
+    color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #5c2843;
+}
+
+.major:hover {
+    cursor: pointer;
+}
+
+.card-section {
+    perspective: 900px;
+}
+
+.card-section>.animated-card {
+    cursor: pointer;
+    transform: rotateY(-180deg);
+}
+
+.animated-card {
+    height: 240px;
+    margin-top: -15rem;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    backface-visibility: hidden;
+    background-image: var(--card-bg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.cvv-stripe{
+    width: 100%;
+    justify-content: center;
+    height: 35px;
+    margin-top: 8rem;
+    background: #000;
+}
+.cvv-num{
+    color: #fff;
+    text-align: end;
+    letter-spacing: 5px;
+    margin-right: 1rem;
+}
+
+.card {
+    justify-content: space-between;
+    padding: 2rem 1rem 4rem;
+}
+
+.hologram {
+    position: absolute;
+    top: -.2rem;
+    width: 70px;
+    height: 75px;
+    margin-top: .5rem;
+    object-fit: fill;
+}
+
+.express {
+    transform: scale(1.5);
+    margin-right: .8rem;
+}
+
+.bottom-card {
+    padding-bottom: 0rem;
+    position: relative;
+}
+
+.content-holder {
+    position: fixed;
+    color: #c9a4adff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.holder-alt {
+    position: absolute;
+    right: .5rem;
+}
+
+.spans {
+    font-size: 10px;
+    margin-left: .5rem;
+}
+
+.entries {
+    margin-left: .5rem;
+    margin-top: .1rem;
+    font-size: 12px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.exp-text {
+    text-align: right;
+}
+
+.exp {
+    align-items: center;
+    gap: 0;
+}
+
+.card-logo {
+    right: 1rem;
+    object-fit: contain;
+}
+
+.display{
+    align-items: center;
+    padding: 0 .8rem;
+    justify-content: space-between;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 2.5rem;
+    color: #c9a4adff;
+}
+
+@media screen and (min-width:520px) {
+    .container {
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width:768px) {
+    input {
+        font-size: 16px;
+    }
+
+    input[type="number"] {
+        letter-spacing: 3px;
+        font-size: 16px;
+    }
+
+    .card-area {
+        padding: 2.5rem;
+        padding-top: 8rem;
+    }
+
+
+    .label {
+        font-size: 16px;
+    }
+
+    .form {
+        gap: 2rem;
+    }
+
+    .select {
+        font-size: 16px;
+    }
+
+    .select-container::after {
+        top: .8rem;
+    }
+
+    .entries {
+        font-size: 16px;
+    }
+}

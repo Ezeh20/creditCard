@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Credit card</title>
+</head>
+
+<body>
+    <main class="main flex col">
+        <section class="card-container">
+            <div class="card-area container">
+                <section id="card-section" class="major">
+                    <div class="animated-card">
+                        <div class="card flex col front">
+                            <div>
+                                <div class="top-card">
+                                    <img src="/assets/holo.png" alt="hologram" class="hologram">
+                                </div>
+                                <div class="top-card card-logo" id="provider"></div>
+                            </div>
+
+                            <div class="display flex">
+                                <p id="input1"></p>
+                                <p id="input2"></p>
+                                <p id="input3"></p>
+                                <p id="input4"></p>
+                            </div>
+
+                            <div class="bottom-card">
+                                <div class="content-holder">
+                                    <p class="spans">CARD HOLDER</p>
+                                    <p id="owner" class="entries"></p>
+                                </div>
+
+                                <div class="content-holder holder-alt">
+                                    <p class="spans exp-text">EXPIRES</p>
+                                    <div class="flex exp">
+                                        <span id="exp" class="entries"></span>
+                                        <span id="expY" class="entries"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="cvv-stripe flex col">
+                                <p class="cvv-num" id="cvv-num"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <form name="input-field" class="form flex col">
+                    <label for="card-number" class="label flex col">
+                        CARD NUMBER
+                        <div class="card-number">
+                            <input id="card-number" type="number" oninput="restrictInput(this); another()">
+                            <input id="card-number1" type="number" oninput="restrictInput(this)">
+                            <input id="card-number2" type="number" oninput="restrictInput(this)">
+                            <input id="card-number3" type="number" oninput="restrictInput(this)">
+                        </div>
+                        <small id="card-number-error"></small>
+                    </label>
+                    <label for="card-holder" class="label flex col">
+                        CARD HOLDER
+                        <input id="card-holder" type="text" class="input-alt" oninput="onInput()">
+                        <small id="holder-error"></small>
+                    </label>
+                    <div class="bottom flex">
+                        <div class="drop-downs">
+                            <label for="month" class="label flex col position">
+                                EXPIATION DATE
+                                <div class="selects flex">
+                                    <div class="select-container">
+                                        <select name="month" id="month" class="select"
+                                            oninput="onMonthInput()"></select>
+                                    </div>
+                                    <div class="select-container">
+                                        <select name="year" id="year" class="select" oninput="onYearInput()"></select>
+                                    </div>
+                                </div>
+                                <small id="exp-error" class="error-bottom"></small>
+                            </label>
+                        </div>
+                        <label for="cvv" class="label flex col cvv position">
+                            CVV
+                            <input id="cvv" type="number" oninput="restrictInputAlt(this)">
+                            <small id="cvv-error" class="error-bottom"></small>
+                        </label>
+                    </div>
+                    <button type="button" id="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
