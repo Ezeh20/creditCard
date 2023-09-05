@@ -36,10 +36,10 @@ for (let i = 0; i <= maxYear; i++) {
 
 //restrict input of type number for card number to 4
 function restrictInput(input) {
-    input1.textContent = cardDetails[0].value
-    input2.textContent = cardDetails[1].value
-    input3.textContent = cardDetails[2].value
-    input4.textContent = cardDetails[3].value
+    input1.textContent = cardDetails[0].value.slice(0, 4)
+    input2.textContent = cardDetails[1].value.slice(0, 4)
+    input3.textContent = cardDetails[2].value.slice(0, 4)
+    input4.textContent = cardDetails[3].value.slice(0, 4)
     const firstDigit = another()
     const convert = Number(firstDigit)
     if (input.value.length > 4) {

@@ -140,6 +140,7 @@ small {
 .select {
     width: 100%;
     padding: 1rem;
+    background-color: var(--input-area);
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
